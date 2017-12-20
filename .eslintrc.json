@@ -1,0 +1,16 @@
+{
+    "extends": "airbnb",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "no-unused-vars": 2,
+        "max-len": [1, 800, 2, { "ignoreComments": true }],
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "class-methods-use-this": [0],
+        "react/prefer-stateless-function": [0, { "ignorePureComponents": true }]
+    }
+}
