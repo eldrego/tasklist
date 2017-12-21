@@ -11,6 +11,7 @@
         "max-len": [1, 800, 2, { "ignoreComments": true }],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "class-methods-use-this": [0],
-        "react/prefer-stateless-function": [0, { "ignorePureComponents": true }]
+        "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
+        "react/forbid-prop-types": [0]
     }
 }
