@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Alert } from 'react-native';
+// import { Alert } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import TaskList from '../components/TaskList';
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Text, View, TouchableHighlight } from 'react-native';
 import styles from '../css/styles';
 
-// import Render from './Render';
+import Render from './Render';
 
 export default class TaskRow extends Component {
   constructor(props) {
@@ -17,18 +17,7 @@ export default class TaskRow extends Component {
   }
 
   render() {
-    return (
-      <View style={styles.taskRow}>
-        <Text>{this.props.todo.task}</Text>
-
-        <TouchableHighlight
-          style={styles.doneButton}
-          onPress={this.onDonePressed}
-        >
-          <Text style={styles.doneButtonText}>Done</Text>
-        </TouchableHighlight>
-      </View>
-    );
+    return Render.bind(this)(styles);
   }
 }
 
