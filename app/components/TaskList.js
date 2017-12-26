@@ -5,6 +5,7 @@ import {
   Text,
   ListView,
   TouchableHighlight,
+  Switch,
 } from 'react-native';
 import styles from '../css/styles';
 import TaskRow from '../TaskRow';
@@ -41,7 +42,22 @@ export default class TaskList extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View
+          style={styles.toggleRow}
+        >
+          <Switch
+            onValueChange={this.props.onToggle}
+            value={this.props.filter !== 'pending'}
+          />
+          <Text
+            style={styles.toggleText}
+          >
+            Showing {this.props.todos.length} {this.props.filter} todos(s)
+          </Text>
+        </View>
+
         <ListView
+          enableEmptySections
           dataSource={this.state.dataSource}
           key={this.props.todos}
           renderRow={this.renderRow}
@@ -59,6 +75,8 @@ export default class TaskList extends Component {
 
 TaskList.propTypes = {
   addTask: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
   onDone: PropTypes.func.isRequired,
+  onToggle: PropTypes.func.isRequired,
   todos: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

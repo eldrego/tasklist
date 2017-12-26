@@ -105,6 +105,15 @@ const styles = StyleSheet.create({
   doneButtonText: {
     fontSize: 11,
   },
+  toggleRow: {
+    flexDirection: 'row',
+    padding: 10,
+  },
+  toggleText: {
+    fontSize: 15,
+    paddingLeft: 10,
+    paddingTop: 5,
+  },
 });
 
 export default styles;

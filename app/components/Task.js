@@ -27,6 +27,7 @@ export default class Task extends Component {
 
     this.onAddNew = this.onAddNew.bind(this);
     this.onDone = this.onDone.bind(this);
+    this.onToggle = this.onToggle.bind(this);
   }
 
   onAddNew(task) {
@@ -37,11 +38,19 @@ export default class Task extends Component {
     this.props.navigation.dispatch(backAction);
   }
 
-  onDone(todo) {
-    const filteredTodos = this.state.todos.filter((filterTodo) => {
-      return filterTodo !== todo;
+  onDone(task) {
+    store.dispatch({
+      type: 'DONE_TASK',
+      task,
     });
-    this.setState({ todos: filteredTodos });
+  }
+
+  onToggle() {
+    const filter = this.state.filter === 'pending' ? 'done' : 'pending';
+    store.dispatch({
+      type: 'TOGGLE_STATE',
+      filter,
+    });
   }
 
   render() {
@@ -53,6 +62,8 @@ export default class Task extends Component {
 
     return (
       <TaskList
+        filter={this.state.filter}
+        onToggle={this.onToggle}
         addTask={addTask}
         onDone={this.onDone}
         todos={this.state.todos}
