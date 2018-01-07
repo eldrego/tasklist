@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
 // import { Alert } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import TaskList from '../components/TaskList';
@@ -21,13 +22,15 @@ export default class Task extends Component {
     this.state = store.getState();
     this.state.navigate = navigate;
 
-    store.subscribe(() => {
-      this.setState(store.getState());
-    });
-
     this.onAddNew = this.onAddNew.bind(this);
     this.onDone = this.onDone.bind(this);
     this.onToggle = this.onToggle.bind(this);
+  }
+
+  componentDidMount() {
+    store.subscribe(() => {
+      this.setState(store.getState());
+    });
   }
 
   onAddNew(task) {
@@ -75,3 +78,5 @@ export default class Task extends Component {
 Task.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
+
+// export default connect()(Task);

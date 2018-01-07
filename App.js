@@ -9,7 +9,7 @@ import TaskForm from './app/components/TaskForm';
 import styles from './app/css/styles';
 
 const Navigator = StackNavigator({
-  // Home: { screen: Home },
+  Home: { screen: Home },
   Task: { screen: Task },
   TaskForm: { screen: TaskForm },
 });

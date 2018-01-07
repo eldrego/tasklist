@@ -12,7 +12,7 @@ export default function render(baseStyle) {
   const buttons = [
     {
       text: 'Done',
-      backgroundColor: '#3399cc',
+      backgroundColor: '#4EB433',
       underlayColor: '#dddddd',
       onPress: this.onDonePressed.bind(this),
     },
