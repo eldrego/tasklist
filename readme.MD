@@ -1,15 +1,15 @@
-#### tasklist
+## Tasklist
 
 A simple react native application with simple and somewhat complex UIs. Animations also exist for some parts of the UI.
 
-### Prerequisites
+## Prerequisites
 
 Follow the instructions with building mobile applications with native code
 
 - Ensure that you install all relevant dependencies
 * Node
 
-### Installing
+## Installing
 
 Clone this repo using `git clone git@github.com:eldrego/tasklist.git`
 Move to the appropriate directory `cd tasklist`
